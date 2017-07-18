@@ -10,12 +10,12 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   providers: [ PhotoService ]
 })
 export class UserPhotosListComponent implements OnInit {
-  photos;
+  savedPhotos: FirebaseListObservable <any[]> = null;
+
   constructor(private photoService: PhotoService) { }
 
-  savedPhotos: FirebaseListObservable <any[]> = null;
   ngOnInit(){
-    this.photos = this.photoService.getPhotos();
+    this.savedPhotos = this.photoService.getPhotos();
   }
   deletePhoto(selectedPhoto: Photo) {
     this.photoService.deletePhoto(selectedPhoto);
