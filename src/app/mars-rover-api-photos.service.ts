@@ -19,7 +19,7 @@ export class MarsRoverApiPhotos {
       let foundPhoto: Photo;
       for(let image of response.json().photos) {
         foundPhoto = new Photo(image.img_src, camera, date);
-        this.photoService.addPhoto(foundPhoto);
+        this.photoService.addPhoto(foundPhoto);// save to DB
       }
     });
   }
