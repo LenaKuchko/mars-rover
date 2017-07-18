@@ -16,6 +16,7 @@ export class PhotosListComponent implements OnInit {
     let newPhoto: Photo = new Photo(imgURL, camera, date);
     this.photoService.addPhoto(newPhoto);
     alert('This image has been added to your list of saved images.');
+    console.log("test");
   }
 
   ngOnInit() {

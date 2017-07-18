@@ -14,6 +14,7 @@ export class MarsRoverApiPhotos {
   }
 
   saveImages(date: string, camera: string) {
+    console.log("save all");
   return this.http.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=" + date + "&camera=" + camera + "&api_key=" + apiKey)
     .subscribe(response => {
       let foundPhoto: Photo;
